@@ -29,6 +29,8 @@ Megalist<-list(mtcars,islands,beaver1)
 
 6. #### Does islands consist of numeric data? How did you find out?
 
+
+
 7. #### Code four different ways to subscript the 2nd row and 7th column of mtcars using bracket notation. (Hint: You are looking to return the number 17.02)
 
 8. #### How would you change the landmass values of "Iceland", "Kyushu", and "Tierra del Fuego" to 82, 21, and 10 in the islands dataset? (Hint: You will need to use subscripts and the <- operator).
