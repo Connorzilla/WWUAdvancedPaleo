@@ -17,15 +17,22 @@ integer(0)
 ##SECTION 2 QUESTIONS
 4. #### How many times does the number 7 occur in MyMatrix?
 
-
+Nine times according to the function:
+> MyMatrix[which(MyMatrix==7)]
+[1] 7 7 7 7 7 7 7 7 7
 
 5. #### How do you find the sum of each column?
 
-
+Use the sum and apply function in tandem:
+> apply(MyMatrix,2,sum)
+ [1] 46 35 32 50 45 61 38 47 38 39 57 50
 
 6. #### How do you find the product of each column?
 
-
+Do the same thing using product instead of sum:
+> apply(MyMatrix,2,prod)
+ [1]  100000    9600    6804  840000  241920 7741440   12600  403200
+ [9]   70000   38880 4408992 1008000
 
 7. #### How can you change every instance of the number 1 to 11?
 
