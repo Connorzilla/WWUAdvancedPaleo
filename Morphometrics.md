@@ -1,4 +1,4 @@
 ### Morphometric Plot of Osteostracans
 
 ![Image of Morphometrics]
-(https://drive.google.com/file/d/1abFd-Muhny7ZXBVdf7XH1f42CNtTZrko/view?usp=sharing)
+(https://github.com/Connorzilla/WWUAdvancedPaleo/blob/master/Osteostracans%20Plot.png)
