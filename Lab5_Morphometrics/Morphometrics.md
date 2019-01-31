@@ -1,7 +1,6 @@
 ### Morphometric Plot of Osteostracans
 
-![Image of Morphometrics]
-(https://github.com/Connorzilla/WWUAdvancedPaleo/blob/master/Osteostracans%20Plot.png)
+![Image of Morphometrics](https://github.com/Connorzilla/WWUAdvancedPaleo/blob/master/Osteostracans%20Plot.png)
 
 Unfortunately the plot won't embed, but if you look at my repository for it, you'll see that there's quite a spread in terms of feature placement for the osteostracans. The plot shows that the 'wing'-like features are the most varied between members, but there's also substantial diversity in terms of specimen length. 
 
