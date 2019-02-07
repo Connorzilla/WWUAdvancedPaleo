@@ -6,7 +6,7 @@
 
 
 
-## Part II Questions (A)
+## Part II Questions (Subsection 1)
 
 1. The element names listed are "land", "links", "species", "site", and "outline"
 
@@ -27,5 +27,13 @@
 > dim(plethodon[[1]])
 [1] 12  2 40
 
+## Part II Questions (Subsection 2)
+
+1. The object "land" represents the hummingbird landmark data. 
+
+2. I performed a procrustes on the hummingbird data using the code:
+> ProcrustesHummingbirds<-gpagen(hummingbirds$land)
+
+3. The following is a PCA plot of the hummingbird data:
 
 
