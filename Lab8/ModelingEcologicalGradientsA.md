@@ -53,6 +53,22 @@ To find the Jaccard similarity:
 
 3. Install and load the vegan package. Read the help file for the vegdist( ) function, then use vegdist( ) to calculate the Jaccard distance of the Miocene and Pleistocene samples from the PresencePBDB matrix. Your answer should be identical to your answer to Question two.
 
+I got an answer of 0.111111
+
+> vegan::vegdist(Numbershared, method="jaccard", binary=FALSE, diag=FALSE, upper=FALSE, na.rm=FALSE)
 
 
 4. Using the vegdist( ) function, calculate the Jaccard distances for all of the following epochs in PresencePBDB: Pleistocene, Pliocene, Miocene, Oligocene, Eocene, Paleocene. What code did you use? Which two epochs are the most dissimilar?
+
+Pleistocene: 0.111111
+Miocene: 0.2727272
+Pliocene: 0.1818181
+Oligocene: 0.529411765
+Paleocene: 0.470588
+
+It seems the Pleistocene and Oligocene are most dissimalar. 
+
+>Numbermany<-which(((PresencePBDB["Pleistocene",]==1)&(PresencePBDB["Miocene",]==1)&(PresencePBDB["Pliocene",]==1)&(PresencePBDB["Oligocene",])&(PresencePBDB["Paleocene",])))
+> vegan::vegdist(Numbermany, method="jaccard", binary=FALSE, diag=FALSE, upper=FALSE, na.rm=FALSE)
+
+
