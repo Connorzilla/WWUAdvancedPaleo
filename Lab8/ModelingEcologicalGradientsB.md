@@ -20,5 +20,9 @@ I used the code:
 > plot(OrdoDCA,display="sites")
 
 The result looks something like this: 
+
+
 ![ImageDCA](https://github.com/Connorzilla/WWUAdvancedPaleo/blob/master/Lab8/DCA%20of%20Ordovician.png)
 
+
+Considering that life tends to prefer the equator, I would say that DCA 2 is latitude as samples are more clustered in the middle of that axis. DCA 1 would then be the longitude, as samples are more spread out along the Ordovician Earth on this axis. 
