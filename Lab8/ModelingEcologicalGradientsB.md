@@ -20,3 +20,5 @@ I used the code:
 > plot(OrdoDCA,display="sites")
 
 The result looks something like this: 
+![ImageDCA]https://github.com/Connorzilla/WWUAdvancedPaleo/blob/master/Lab8/DCA%20of%20Ordovician.png
+
