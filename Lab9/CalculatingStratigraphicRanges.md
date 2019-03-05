@@ -4,13 +4,26 @@ There are four columns in DataPBDB relevant to the age of an organism: early_int
 
 1. What do the max_ma and min_ma columns of DataPBDB represent? If you do not intuitively know, you can always check the Paleobiology Database API documentation.
 
+These two columns represent the early bound and the late bound (respectively) of a taxa in the fossil record.
+
 2. What is oldest age of each genus? [Hint: Use the tapply( ) and max( ) functions we've used in previous labs]. Show the code you would use to find out.
+
+The oldest age of each genus can be found with the code:
+>tapply(DataPBDB[,"genus"], DataPBDB[,"max_ma"],max)
 
 3. What is the youngest age of each genus? [Hint: Use the tapply( ) and min( ) functions we've used in previous labs]. Show the code you would use to find out.
 
+The same code is used except "max_ma" is substituted with "min_ma":
+> tapply(DataPBDB[,"genus"], DataPBDB[,"min_ma"],max)
+
 4. Find which genus has the most occurrences in the dataset [Hint: Use the table( ) function!]. What code did you use?
 
+Genus Anadara has 2105 occurances:
+>max(table(DataPBDB[,"genus"]))
+[1] 2105
+
 5. What is the stratigraphic range of this taxon (i.e., your answer to question 4). Show your code.
+
 
 ## Problem Set 2
 
