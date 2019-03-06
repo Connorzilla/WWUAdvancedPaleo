@@ -24,7 +24,11 @@ Genus Anadara has 2105 occurances:
 
 5. What is the stratigraphic range of this taxon (i.e., your answer to question 4). Show your code.
 
-> tapply(DataPBDB[,"Anadara"],DataPBDB[,"min_ma"],max)
+I used the following code which spat out a table of stratigraphic ranges ranging from 0 to 56 Ma...
+
+> Anadara<-DataPBDB[which(DataPBDB[,"genus"]=="Anadara"),]
+> tapply(Anadara[,"genus"],Anadara[,"min_ma"],max)
+
 
 ## Problem Set 2
 
