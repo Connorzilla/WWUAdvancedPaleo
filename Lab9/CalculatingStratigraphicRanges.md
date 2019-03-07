@@ -106,9 +106,33 @@ There are 71,325 occurances of total bivalves in the PBDB, and only 932 extant o
 
 19. How many unique( ) genera were in DataPBDB and ExtantData, respectively. Using this information, what percentage of Cenozoic bivalves in the PBDB are still extant today.
 
-
+There are 1081 unique genera in the PBDB extant and extinct. There are 546 extant unique genera. This means that about 50% of these bivalve genera are still alive today. 
 
 20. Find the stratigraphic range of fossil occurrences for each genus in the ExtantData dataset. If you do not remember how to do this, revisit Problem Set 1 of this lab.
+
+tapply(ExtantData[,"genus"],ExtantData[,"max_ma"],max)80
+Error: unexpected numeric constant in "tapply(ExtantData[,"genus"],ExtantData[,"max_ma"],max)80"
+> range(ExtantData[21,22],ExtantData[,"max_ma"],max)
+Error in min(x, na.rm = na.rm) : invalid 'type' (list) of argument
+> range((ExtantData[,"genus"],ExtantData[,"max_ma"],max)&(ExtantData[,"genus"],ExtantData[,"min_ma"],max))
+Error: unexpected ',' in "range((ExtantData[,"genus"],"
+> range(tapply(ExtantData[,"min_ma"],ExtantData[,"genus"],min))
+[1]  0.0 61.6
+> range(tapply(ExtantData[,"min_ma"],ExtantData[,"genus"],max))
+[1]  0.0 63.3
+> range(tapply(ExtantData[,"max_ma"],ExtantData[,"genus"],max))
+[1]  0.0117 66.0000
+> View(ExtantBivalves)
+> View(ExtantData)
+> tapply(> range(tapply(ExtantData[,"min_ma"],ExtantData[,"genus"],min)))
+Error: unexpected '>' in "tapply(>"
+> ExtantDataRange<-tapply(range(tapply(ExtantData[,"min_ma"],ExtantData[,"genus"],min)))
+Error in tapply(range(tapply(ExtantData[, "min_ma"], ExtantData[, "genus"],  : 
+  argument "INDEX" is missing, with no default
+> tapply(ExtantData[,"min_ma"],ExtantData[,"genus"],min)))
+Error: unexpected ')' in "tapply(ExtantData[,"min_ma"],ExtantData[,"genus"],min))"
+> tapply(ExtantData[,"min_ma"],ExtantData[,"genus"],min)
+> table(ExtantData[,"genus"],ExtantData[,"min_ma"])
 
 21. Using your answer to question 3, find which genera in ExtantData are not extant according to the PBDB - i.e., do not have a minimum min_age of zero. Show your code.
 
