@@ -110,30 +110,60 @@ There are 1081 unique genera in the PBDB extant and extinct. There are 546 extan
 
 20. Find the stratigraphic range of fossil occurrences for each genus in the ExtantData dataset. If you do not remember how to do this, revisit Problem Set 1 of this lab.
 
-tapply(ExtantData[,"genus"],ExtantData[,"max_ma"],max)80
-Error: unexpected numeric constant in "tapply(ExtantData[,"genus"],ExtantData[,"max_ma"],max)80"
-> range(ExtantData[21,22],ExtantData[,"max_ma"],max)
-Error in min(x, na.rm = na.rm) : invalid 'type' (list) of argument
-> range((ExtantData[,"genus"],ExtantData[,"max_ma"],max)&(ExtantData[,"genus"],ExtantData[,"min_ma"],max))
-Error: unexpected ',' in "range((ExtantData[,"genus"],"
-> range(tapply(ExtantData[,"min_ma"],ExtantData[,"genus"],min))
-[1]  0.0 61.6
-> range(tapply(ExtantData[,"min_ma"],ExtantData[,"genus"],max))
-[1]  0.0 63.3
-> range(tapply(ExtantData[,"max_ma"],ExtantData[,"genus"],max))
-[1]  0.0117 66.0000
-> View(ExtantBivalves)
-> View(ExtantData)
-> tapply(> range(tapply(ExtantData[,"min_ma"],ExtantData[,"genus"],min)))
-Error: unexpected '>' in "tapply(>"
-> ExtantDataRange<-tapply(range(tapply(ExtantData[,"min_ma"],ExtantData[,"genus"],min)))
-Error in tapply(range(tapply(ExtantData[, "min_ma"], ExtantData[, "genus"],  : 
-  argument "INDEX" is missing, with no default
-> tapply(ExtantData[,"min_ma"],ExtantData[,"genus"],min)))
-Error: unexpected ')' in "tapply(ExtantData[,"min_ma"],ExtantData[,"genus"],min))"
-> tapply(ExtantData[,"min_ma"],ExtantData[,"genus"],min)
-> table(ExtantData[,"genus"],ExtantData[,"min_ma"])
+>StratoRange = ExtantData[,"max_ma"]-ExtantData[,"min_ma"]
+>ExtantData$StratographicRange<-StratoRange
 
 21. Using your answer to question 3, find which genera in ExtantData are not extant according to the PBDB - i.e., do not have a minimum min_age of zero. Show your code.
 
+> MinMinMa <- tapply(ExtantData[,"min_ma"],ExtantData[,"genus"],min)
+> ExtantData2 <- as.data.frame(MinMinMa)
+> which(ExtantData2[,"MinMinMa"]!=0)
+
 22. Calculate the confidence interval for the extinction of the following genera (careful with your spelling!): Scrobicularia, Meiocardia, Dimya, Digitaria, Cuspidaria, Arctica, Aloides, Kurtiella, Gouldia, and Acrosterigma. Show your code. What percentage of these taxa have confidence intervals indicating that the taxon might still be extant?
+
+Any taxa with 'Latest' dates that are signifcantly larger and more negative than the early dates are likely still extant. This seems to be the case for all taxa here except for Cuspidaria and maybe Arctica or Acrosterigma. 
+
+> estimateExtinction(Scrobicularia[,"min_ma"],0.95)
+ Earliest    Latest 
+  0.01170 -34.70966 
+  
+ > estimateExtinction(Meiocardia[,"min_ma"],0.95)
+ Earliest    Latest 
+ 0.011700 -3.937808
+ 
+ >estimateExtinction(Dimya[,"min_ma"],0.95)
+ Earliest    Latest 
+ 0.781000 -2.054688 
+ 
+ >estimateExtinction(Digitaria[,"min_ma"],0.95)
+ Earliest    Latest 
+ 0.781000 -3.761154 
+ 
+ > estimateExtinction(Cuspidaria[,"min_ma"],0.95)
+ Earliest    Latest 
+2.5880000 0.8802009 
+
+> estimateExtinction(Arctica[,"min_ma"],0.95)
+ Earliest    Latest 
+ 0.011700 -1.696099 
+ 
+ > estimateExtinction(Aloides[,"min_ma"],0.95)
+Earliest   Latest 
+   5.333     -Inf 
+   
+ >estimateExtinction(Kurtiella[,"min_ma"],0.95)
+ Earliest    Latest 
+   0.0117 -189.9883 
+   
+ > estimateExtinction(Kurtiella[,"min_ma"],0.95)
+ Earliest    Latest 
+   0.0117 -189.9883 
+   
+>  estimateExtinction(Acrosterigma[,"min_ma"],0.95)
+ Earliest    Latest 
+ 0.011700 -3.481128 
+
+
+ 
+ 
+ 
